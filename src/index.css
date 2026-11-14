@@ -93,3 +93,29 @@ body {
   text-decoration: none;
   font-weight: 600;
 }
+
+.back-link {
+  color: #57606a;
+  text-decoration: none;
+}
+
+.steps {
+  display: flex;
+  gap: 8px;
+  margin: 16px 0 24px;
+}
+
+.steps a {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 3px solid #e3e6ea;
+  color: #57606a;
+  text-decoration: none;
+}
+
+.steps a.active {
+  border-bottom-color: #4f8cff;
+  color: #1f2328;
+  font-weight: 600;
+}
