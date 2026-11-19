@@ -31,19 +31,19 @@ function PersonalStep() {
         <div className="form-field">
           <label htmlFor="fullName">Full Name</label>
           <input id="fullName" {...register("fullName")} aria-invalid={!!errors.fullName} />
-          {errors.fullName && <p className="error">{errors.fullName.message}</p>}
+          {errors.fullName && <p className="error" role="alert">{errors.fullName.message}</p>}
         </div>
 
         <div className="form-field">
           <label htmlFor="email">Email</label>
           <input id="email" type="email" {...register("email")} aria-invalid={!!errors.email} />
-          {errors.email && <p className="error">{errors.email.message}</p>}
+          {errors.email && <p className="error" role="alert">{errors.email.message}</p>}
         </div>
 
         <div className="form-field">
           <label htmlFor="phone">Phone</label>
           <input id="phone" type="tel" {...register("phone")} aria-invalid={!!errors.phone} />
-          {errors.phone && <p className="error">{errors.phone.message}</p>}
+          {errors.phone && <p className="error" role="alert">{errors.phone.message}</p>}
         </div>
 
         <div className="form-actions">

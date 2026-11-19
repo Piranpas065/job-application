@@ -176,3 +176,14 @@ fieldset {
   border: none;
   padding: 0;
 }
+
+@media (max-width: 600px) {
+  .review-section dl {
+    grid-template-columns: 1fr;
+  }
+
+  .steps a {
+    font-size: 13px;
+    padding: 8px 4px;
+  }
+}

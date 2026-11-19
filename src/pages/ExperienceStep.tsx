@@ -13,7 +13,7 @@ function ExperienceStep() {
     const { jobId } = useParams();
     const { data, setData } = useOutletContext<ApplyContext>();
 
-    const { register, handleSubmit, formState: { errors } } = useForm<ExperienceForm>({
+const { register, handleSubmit, formState: { errors } } = useForm<ExperienceForm>({     
         resolver: zodResolver(experienceSchema),
         defaultValues: data.experience,
     });
@@ -24,7 +24,7 @@ function ExperienceStep() {
 
     const onSubmit = handleSubmit((values) => {
         setData(prev => ({ ...prev, experience: values }));
-        navigate(`/apply/${jobId}/review`);   // review-kku
+        navigate(`/apply/${jobId}/review`);   
     });
 
     return (
@@ -41,7 +41,7 @@ function ExperienceStep() {
                             {skill}
                         </label>
                     ))}
-                    {errors.skills && <p className="error">{errors.skills.message}</p>}
+                    {errors.skills && <p className="error" role="alert">{errors.skills.message}</p>}
                 </fieldset>
 
                 {/* 2. Years: number */}
@@ -53,7 +53,7 @@ function ExperienceStep() {
                         {...register("years", { valueAsNumber: true })}
                         aria-invalid={!!errors.years}
                     />
-                    {errors.years && <p className="error">{errors.years.message}</p>}
+                    {errors.years && <p className="error" role="alert">{errors.years.message}</p>}
                 </div>
 
                 {/* 3. Resume URL */}
@@ -65,7 +65,7 @@ function ExperienceStep() {
                         {...register("resumeUrl")}
                         aria-invalid={!!errors.resumeUrl}
                     />
-                    {errors.resumeUrl && <p className="error">{errors.resumeUrl.message}</p>}
+                    {errors.resumeUrl && <p className="error" role="alert">{errors.resumeUrl.message}</p>}
                 </div>
 
                 <div className="form-actions">
