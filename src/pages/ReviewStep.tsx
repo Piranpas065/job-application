@@ -1,4 +1,4 @@
-import { useNavigate, useOutletContext, useParams, Navigate, Link} from "react-router-dom";
+import { useNavigate, useOutletContext, useParams, Navigate, Link } from "react-router-dom";
 import { useState } from "react";
 import type { ApplyContext } from "./ApplyLayout";
 
@@ -67,8 +67,20 @@ function ReviewStep() {
             </section>
 
             <div className="form-actions">
-                <button className="btn-secondary"  type="button" onClick={handleSubmit} disabled={isSubmitting}>Back</button>
-                <button className="btn-secondary"  type="button" onClick={handleSubmit} disabled={isSubmitting}>{isSubmitting ? "Submitting..." : "Submit"}</button>
+                <button
+                    type="button"
+                    className="btn-secondary"
+                    onClick={() => navigate(`/apply/${jobId}/experience`)}
+                    disabled={isSubmitting}
+                >
+                    Back
+                </button>
+                <button 
+                    className="btn-secondary" 
+                    type="button" 
+                    onClick={handleSubmit} 
+                    disabled={isSubmitting}>
+                    {isSubmitting ? "Submitting..." : "Submit"}</button>
             </div>
 
         </div>
